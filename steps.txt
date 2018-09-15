@@ -35,3 +35,13 @@ Get-MpThreatDetection | Sort InitialDetectionTime -Descending | select -First 1
 Get-WinEvent 'Microsoft-Windows-Windows Defender/Operational' | Where-Object Id -eq 1116 | Format-List
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Change line number 886 in original script:
+
+From:
+$GetProcAddress = $UnsafeNativeMethods.GetMethod('GetProcAddress')
+
+To:
+$GetProcAddress = $UnsafeNativeMethods.GetMethod('GetProcAddress', [reflection.bindingflags] "Public,Static", $null, [System.Reflection.CallingConventions]::Any, @((New-Object System.Runtime.InteropServices.HandleRef).GetType(), [string]), $null);
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
