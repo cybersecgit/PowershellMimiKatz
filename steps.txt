@@ -36,7 +36,7 @@ Get-WinEvent 'Microsoft-Windows-Windows Defender/Operational' | Where-Object Id 
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-Change line number 886 in original script:
+Change line number 886 in original script for latest updated Windows 10 build:
 
 From:
 $GetProcAddress = $UnsafeNativeMethods.GetMethod('GetProcAddress')
